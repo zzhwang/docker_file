@@ -1,0 +1,15 @@
+version: "3.6"
+services:
+  spider:
+    image: se_test
+    volumes:
+      - /home/SpiderProject/project/test.py:/code/test.py
+      - /home/SpiderProject/project:/data
+    command: python /code/test.py
+    depends_on:
+      - chrome
+  chrome:
+    image: selenium/standalone-chrome:3.12.0-cobalt
+    ports:
+      - "4444:4444"
+    shm_size: 2g

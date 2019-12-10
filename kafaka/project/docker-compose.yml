@@ -1,0 +1,10 @@
+version: "3.6"
+services:
+  spider_ka:
+    image: python:kafaka
+    network_mode: host
+    volumes:
+      - /home/SpiderProject/kafaka/project/producer.py:/code/producer.py
+    command:
+      python /code/producer.py
+
